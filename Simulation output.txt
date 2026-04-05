@@ -1,0 +1,452 @@
+		tb_top
+Loading snapshot worklib.tb_top:sv .................... Done
+SVSEED default: 1
+xcelium> source /xcelium25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+[TEST] Starting formal test sequence...
+[DRV] RESET STARTED
+[DRV] RESET ENDED
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:281f ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:ea52 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:78a1 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:cbba ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:92e1 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:1b45 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:0f28 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:8be1 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:7cc3 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:7bee ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:c287 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:3c09 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:a9f4 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:c1e7 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:9950 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:c91a ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:ebff ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:9a57 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:2841 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:b46f ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:3891 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:1e6c ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:3fb4 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:95cd ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:4d9c ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:26fb ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:6bce ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:81da ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:eb31 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:8103 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:663e ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:c97d ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:00c7 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:06cf ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:3b58 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:0345 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:569d ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:dfc0 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:4255 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:dcab ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:818e ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:a8d8 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:61c2 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:610e ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:4823 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:4dcf ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:e2c0 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:2e0a ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:c5ca ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:8aea ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:8a23 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:185c ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:40b1 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:0|| RD:1 ||DATA:f21c ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[GENERATOR]=======================
+[GENERATOR]|| WR:1|| RD:0 ||DATA:3027 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:281f ||FULL:0|| EMPTY:1 ||DATA_OUT: 0000||
+[SCB] Pushed:281f QueueSize:1
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:281f ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:ea52 ||FULL:0|| EMPTY:1 ||DATA_OUT: 0000||
+[SCB] Pushed:ea52 QueueSize:2
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:ea52 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:78a1 ||FULL:0|| EMPTY:1 ||DATA_OUT: 0000||
+[SCB] Pushed:78a1 QueueSize:3
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:78a1 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:cbba ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:cbba QueueSize:4
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:cbba ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:92e1 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:92e1 QueueSize:5
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:92e1 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 281f||
+[SCB] PASS Read:281f
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 281f||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:1b45 ||FULL:0|| EMPTY:0 ||DATA_OUT: ea52||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:0f28 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:0f28 QueueSize:5
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:0f28 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: ea52||
+[SCB] PASS Read:ea52
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: ea52||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:8be1 ||FULL:0|| EMPTY:0 ||DATA_OUT: 78a1||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 78a1||
+[SCB] PASS Read:78a1
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 78a1||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:7cc3 ||FULL:0|| EMPTY:0 ||DATA_OUT: cbba||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: cbba||
+[SCB] PASS Read:cbba
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: cbba||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:7bee ||FULL:0|| EMPTY:0 ||DATA_OUT: 92e1||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:c287 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:c287 QueueSize:3
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:c287 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:3c09 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:3c09 QueueSize:4
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:3c09 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:a9f4 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:a9f4 QueueSize:5
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:a9f4 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:c1e7 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:c1e7 QueueSize:6
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:c1e7 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:9950 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:9950 QueueSize:7
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:9950 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 92e1||
+[SCB] PASS Read:92e1
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 92e1||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:c91a ||FULL:0|| EMPTY:0 ||DATA_OUT: 0f28||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:ebff ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:ebff QueueSize:7
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:ebff ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:9a57 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:9a57 QueueSize:8
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:9a57 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0f28||
+[SCB] PASS Read:0f28
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0f28||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:2841 ||FULL:0|| EMPTY:0 ||DATA_OUT: c287||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:b46f ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:b46f QueueSize:8
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:b46f ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:3891 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:3891 QueueSize:9
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:3891 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:1e6c ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:1e6c QueueSize:10
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:1e6c ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: c287||
+[SCB] PASS Read:c287
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: c287||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:3fb4 ||FULL:0|| EMPTY:0 ||DATA_OUT: 3c09||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 3c09||
+[SCB] PASS Read:3c09
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 3c09||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:95cd ||FULL:0|| EMPTY:0 ||DATA_OUT: a9f4||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: a9f4||
+[SCB] PASS Read:a9f4
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: a9f4||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:4d9c ||FULL:0|| EMPTY:0 ||DATA_OUT: c1e7||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:26fb ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:26fb QueueSize:8
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:26fb ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: c1e7||
+[SCB] PASS Read:c1e7
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: c1e7||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:6bce ||FULL:0|| EMPTY:0 ||DATA_OUT: 9950||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 9950||
+[SCB] PASS Read:9950
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 9950||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:81da ||FULL:0|| EMPTY:0 ||DATA_OUT: ebff||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:eb31 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:eb31 QueueSize:7
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:eb31 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:8103 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:8103 QueueSize:8
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:8103 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: ebff||
+[SCB] PASS Read:ebff
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: ebff||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:663e ||FULL:0|| EMPTY:0 ||DATA_OUT: 9a57||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 9a57||
+[SCB] PASS Read:9a57
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 9a57||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:c97d ||FULL:0|| EMPTY:0 ||DATA_OUT: b46f||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:00c7 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:00c7 QueueSize:7
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:00c7 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: b46f||
+[SCB] PASS Read:b46f
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: b46f||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:06cf ||FULL:0|| EMPTY:0 ||DATA_OUT: 3891||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 3891||
+[SCB] PASS Read:3891
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 3891||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:3b58 ||FULL:0|| EMPTY:0 ||DATA_OUT: 1e6c||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 1e6c||
+[SCB] PASS Read:1e6c
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 1e6c||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:0345 ||FULL:0|| EMPTY:0 ||DATA_OUT: 26fb||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 26fb||
+[SCB] PASS Read:26fb
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 26fb||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:569d ||FULL:0|| EMPTY:0 ||DATA_OUT: eb31||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:dfc0 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:dfc0 QueueSize:4
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:dfc0 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: eb31||
+[SCB] PASS Read:eb31
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: eb31||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:4255 ||FULL:0|| EMPTY:0 ||DATA_OUT: 8103||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:dcab ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:dcab QueueSize:4
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:dcab ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:818e ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:818e QueueSize:5
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:818e ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 8103||
+[SCB] PASS Read:8103
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 8103||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:a8d8 ||FULL:0|| EMPTY:0 ||DATA_OUT: 00c7||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 00c7||
+[SCB] PASS Read:00c7
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 00c7||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:61c2 ||FULL:0|| EMPTY:0 ||DATA_OUT: dfc0||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:610e ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:610e QueueSize:4
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:610e ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:4823 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:4823 QueueSize:5
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:4823 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: dfc0||
+[SCB] PASS Read:dfc0
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: dfc0||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:4dcf ||FULL:0|| EMPTY:0 ||DATA_OUT: dcab||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:e2c0 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:e2c0 QueueSize:5
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:e2c0 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:2e0a ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:2e0a QueueSize:6
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:2e0a ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:c5ca ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:c5ca QueueSize:7
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:c5ca ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: dcab||
+[SCB] PASS Read:dcab
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: dcab||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:8aea ||FULL:0|| EMPTY:0 ||DATA_OUT: 818e||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 818e||
+[SCB] PASS Read:818e
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 818e||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:8a23 ||FULL:0|| EMPTY:0 ||DATA_OUT: 610e||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:185c ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:185c QueueSize:6
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:185c ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 610e||
+[SCB] PASS Read:610e
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 610e||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:40b1 ||FULL:0|| EMPTY:0 ||DATA_OUT: 4823||
+================[MONITOR-READ]=======================
+[MONITOR-READ]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 4823||
+[SCB] PASS Read:4823
+================[SCOREBOARD]=======================
+[SCOREBOARD]|| WR:0|| RD:1 ||DATA:0000 ||FULL:0|| EMPTY:0 ||DATA_OUT: 4823||
+================[DRIVER-READ]=======================
+[DRIVER-READ]|| WR:0|| RD:1 ||DATA:f21c ||FULL:0|| EMPTY:0 ||DATA_OUT: e2c0||
+================[MONITOR-WRITE]=======================
+[MONITOR-WRITE]|| WR:1|| RD:0 ||DATA:3027 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+[SCB] Pushed:3027 QueueSize:5
+================[DRIVER-WRITE]=======================
+[DRIVER-WRITE]|| WR:1|| RD:0 ||DATA:3027 ||FULL:0|| EMPTY:0 ||DATA_OUT: 0000||
+=========================================
+         SCOREBOARD FINAL REPORT         
+=========================================
+Total Transactions : 55
+PASS Count         : 25
+FAIL Count         : 0
+=========================================
+Simulation complete via $finish(1) at time 1872 NS + 0
+./environment.sv:48     $finish;

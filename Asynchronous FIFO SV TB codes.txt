@@ -1,0 +1,751 @@
+I EXECUTE THESE CODES IN EDAPLAYGROUND
+// DESIGN.SV ( RIGHT SIDE IN EDAPLAYGROUND )
+
+
+
+//design.sv code
+module fifo_mem #(
+    parameter data_width = 16,
+    parameter addr_width = 4,
+    parameter depth = 16
+)(
+    input  wire                  w_clk,
+    input  wire                  w_en,
+    input  wire                  w_rst,  
+    input  wire                  full,   
+    input  wire [addr_width-1:0] waddr,
+    input  wire [data_width-1:0] d_in,
+    
+    input  wire                  r_clk,
+    input  wire                  r_en,
+    input  wire                  r_rst,  
+    input  wire                  empty,  
+    input  wire [addr_width-1:0] raddr,
+    output wire [data_width-1:0] d_out 
+);
+
+  reg [data_width-1:0] mem [0:depth-1];
+
+  always @(posedge w_clk) begin
+    if (!full && w_en) begin  
+      mem[waddr] <= d_in;
+    end
+  end
+
+
+  assign d_out = mem[raddr]; 
+
+endmodule
+
+
+
+
+
+
+
+module w_clk_domain #(
+    parameter ADDR_WIDTH = 4
+)(
+    input  wire                  w_clk,
+    input  wire                  w_rst,
+    input  wire                  w_en,
+    input  wire [ADDR_WIDTH:0]   read_addr_gray_sync,
+
+    output wire                  w_en_out,
+    output wire [ADDR_WIDTH-1:0] write_addr,
+    output reg  [ADDR_WIDTH:0]   write_addr_gray,
+    output reg                   full
+);
+
+    reg  [ADDR_WIDTH:0] w_bin;
+    wire [ADDR_WIDTH:0] w_bin_next;
+    wire [ADDR_WIDTH:0] w_gray_next;
+    wire                full_val;
+
+    assign w_en_out = w_en & ~full;
+    assign w_bin_next = w_bin + w_en_out;
+    assign w_gray_next = (w_bin_next >> 1) ^ w_bin_next;
+    assign write_addr = w_bin[ADDR_WIDTH-1:0];
+
+    assign full_val = (w_gray_next == {~read_addr_gray_sync[ADDR_WIDTH:ADDR_WIDTH-1], 
+                                        read_addr_gray_sync[ADDR_WIDTH-2:0]});
+
+    always @(posedge w_clk or posedge w_rst) begin
+        if (w_rst) begin
+            w_bin           <= 0;
+            write_addr_gray <= 0;
+            full            <= 1'b0;
+        end else begin
+            w_bin           <= w_bin_next;
+            write_addr_gray <= w_gray_next;
+            full            <= full_val;
+        end
+    end
+endmodule
+
+
+
+
+
+
+
+
+
+module r_clk_domain #(
+    parameter ADDR_WIDTH = 4
+)(
+    input  wire                  r_clk,
+    input  wire                  r_rst,
+    input  wire                  r_en,
+    input  wire [ADDR_WIDTH:0]   write_addr_gray_sync,
+    output wire                  r_en_out,
+    output wire [ADDR_WIDTH-1:0] read_addr,
+    output reg  [ADDR_WIDTH:0]   read_addr_gray,
+    output reg                   empty
+);
+    reg  [ADDR_WIDTH:0] r_bin;
+    wire [ADDR_WIDTH:0] r_bin_next;
+    wire [ADDR_WIDTH:0] r_gray_next;
+    wire                empty_val;
+
+    assign r_en_out = r_en & ~empty;
+    assign r_bin_next = r_bin + r_en_out;
+    assign r_gray_next = (r_bin_next >> 1) ^ r_bin_next;
+    assign read_addr = r_bin[ADDR_WIDTH-1:0];
+
+    always @(posedge r_clk or posedge r_rst) begin
+        if (r_rst) begin
+            r_bin          <= 0;
+            read_addr_gray <= 0;
+            empty<=1'b1;
+        end else begin
+            r_bin          <= r_bin_next;
+            read_addr_gray <= r_gray_next;
+            empty<=empty_val;
+        end
+    end
+
+    assign empty_val = (r_gray_next == write_addr_gray_sync);
+
+endmodule
+
+
+
+module synchronizer #(parameter ADDR_WIDTH = 4)(
+    input  wire                  clk,
+    input  wire                  rst,
+    input  wire [ADDR_WIDTH:0]   d_in,  
+    output reg  [ADDR_WIDTH:0]   d_out );
+reg [ADDR_WIDTH:0] q1;
+always @(posedge clk or posedge rst) begin
+if (rst) begin
+q1    <= 0;
+d_out <= 0;
+end else begin
+q1    <= d_in; 
+d_out <= q1;   
+end
+end
+endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module top #(  
+    parameter DATA_WIDTH = 16,
+    parameter ADDR_WIDTH = 4,
+    parameter DEPTH = 16
+)(
+    input  wire                  w_clk,
+    input  wire                  w_rst,
+    input  wire                  w_en,
+    input  wire [DATA_WIDTH-1:0] d_in,
+    output wire                  full,   
+    
+    input  wire                  r_clk,
+    input  wire                  r_rst,
+    input  wire                  r_en,
+    output wire [DATA_WIDTH-1:0] d_out,
+    output wire                  empty    
+);
+
+    wire [ADDR_WIDTH-1:0] write_addr;
+    wire [ADDR_WIDTH-1:0] read_addr;
+
+    wire w_en_mem;
+    wire r_en_mem;
+
+    wire [ADDR_WIDTH:0] write_addr_gray;
+    wire [ADDR_WIDTH:0] read_addr_gray;
+
+    wire [ADDR_WIDTH:0] write_addr_gray_sync;
+    wire [ADDR_WIDTH:0] read_addr_gray_sync;
+
+    fifo_mem #(
+        .data_width(DATA_WIDTH),
+        .addr_width(ADDR_WIDTH),
+        .depth(DEPTH)
+    ) u_fifo_mem (
+        .w_clk(w_clk),
+        .w_en(w_en_mem),       
+        .w_rst(w_rst),
+        .full(full),            
+        .waddr(write_addr),
+        .d_in(d_in),
+        
+        .r_clk(r_clk),
+        .r_en(r_en_mem),        
+        .r_rst(r_rst),
+        .empty(empty),          
+        .raddr(read_addr),
+        .d_out(d_out));
+
+    w_clk_domain #(
+        .ADDR_WIDTH(ADDR_WIDTH)
+    ) s2 (
+        .w_clk(w_clk),
+        .w_rst(w_rst),
+        .w_en(w_en),
+        .read_addr_gray_sync(read_addr_gray_sync), 
+        
+        .w_en_out(w_en_mem),             
+        .write_addr(write_addr),         
+        .write_addr_gray(write_addr_gray),
+        .full(full));
+
+    r_clk_domain #(
+        .ADDR_WIDTH(ADDR_WIDTH)
+    ) s1 (
+        .r_clk(r_clk),
+        .r_rst(r_rst),
+        .r_en(r_en),
+        .write_addr_gray_sync(write_addr_gray_sync), 
+        
+        .r_en_out(r_en_mem),             
+        .read_addr(read_addr),           
+        .read_addr_gray(read_addr_gray), 
+        .empty(empty));
+
+    synchronizer #(
+        .ADDR_WIDTH(ADDR_WIDTH)
+    ) u_sync_r2w (
+        .clk(w_clk),                   
+        .rst(w_rst),
+        .d_in(read_addr_gray),           
+        .d_out(read_addr_gray_sync));
+
+    synchronizer #(
+        .ADDR_WIDTH(ADDR_WIDTH)
+    ) u_sync_w2r (
+        .clk(r_clk),                    
+        .rst(r_rst),
+        .d_in(write_addr_gray),          
+        .d_out(write_addr_gray_sync));
+endmodule
+
+
+
+
+//INTERFACE.SV ( FROM HERE ALL ARE ON LEFT SIDE IN EDAPLAYGROUND )
+
+
+interface fifo_fif(input logic w_clk, r_clk, w_rst, r_rst);
+  logic wr_en, rd_en;
+  logic [15:0] data_in;
+  logic [15:0] data_out;
+  logic full, empty;
+
+
+modport DRV(output wr_en, rd_en, data_in, w_rst, r_rst,
+            input  full, empty, data_out, w_clk, r_clk);
+modport MON(input wr_en, rd_en, data_in, data_out, 
+            full, empty, w_clk, r_clk);
+endinterface
+
+//Driver can drie signals , 	Drives signals for Read
+//Monitor	Observes signals for	Read Only
+
+
+
+//TRANSACTION.SV
+
+
+
+class transaction;
+  rand bit wr_en, rd_en;
+  rand bit [15:0] data_in;
+  bit [15:0] data_out;
+  bit full, empty;
+  
+    constraint valid_op {
+    wr_en || rd_en;       
+    !(wr_en && rd_en);  
+      rd_en dist {1:=60, 0:=40};
+  }
+  
+  covergroup fifo_cg;
+    
+    // Write enable coverage
+    cp_wr: coverpoint wr_en {
+      bins write    = {1};  
+      bins no_write = {0};  
+    }
+    
+    // Read enable coverage
+    cp_rd: coverpoint rd_en {
+      bins read    = {1}; 
+      bins no_read = {0};  
+    }
+    
+    // Full flag coverage
+    cp_full: coverpoint full {
+      bins fifo_full     = {1};  
+      bins fifo_not_full = {0};  
+    }
+    
+    // Empty flag coverage
+    cp_empty: coverpoint empty {
+      bins fifo_empty     = {1};  
+      bins fifo_not_empty = {0};  
+    }
+    
+    // Data input range coverage
+    cp_data_in: coverpoint data_in {
+      bins low_data  = {[16'h0000:16'h3FFF]};  
+      bins mid_data  = {[16'h4000:16'h7FFF]};  
+      bins high_data = {[16'h8000:16'hBFFF]};  
+      bins max_data  = {[16'hC000:16'hFFFF]}; 
+    }
+    
+    // Data output range coverage
+    cp_data_out: coverpoint data_out {
+      bins low_out  = {[16'h0000:16'h3FFF]};
+      bins mid_out  = {[16'h4000:16'h7FFF]};
+      bins high_out = {[16'h8000:16'hBFFF]};
+      bins max_out  = {[16'hC000:16'hFFFF]};
+    }
+    
+    // Cross coverage — write when full
+    cx_wr_full: cross cp_wr, cp_full {
+      bins write_when_full     = binsof(cp_wr.write) 
+                                 && binsof(cp_full.fifo_full);
+      bins write_when_not_full = binsof(cp_wr.write) 
+                                 && binsof(cp_full.fifo_not_full);
+    }
+    
+    // Cross coverage — read when empty
+    cx_rd_empty: cross cp_rd, cp_empty {
+      bins read_when_empty     = binsof(cp_rd.read) 
+                                 && binsof(cp_empty.fifo_empty);
+      bins read_when_not_empty = binsof(cp_rd.read) 
+                                 && binsof(cp_empty.fifo_not_empty);
+    }
+    
+  endgroup
+
+  // Constructor — create covergroup
+  function new();
+    fifo_cg = new();
+  endfunction
+
+  // Sample coverage
+  function void sample_coverage();
+    fifo_cg.sample();
+  endfunction  
+  
+  
+  
+  
+  function void display(string name);
+    $display("================[%s]=======================",name);
+    $display("[%s]|| WR:%b|| RD:%b ||DATA:%h ||FULL:%b|| EMPTY:%b ||DATA_OUT: %h||", name, wr_en, rd_en, data_in, full, empty,data_out);
+//     $display("================[%s]=======================",name);
+    
+  endfunction
+endclass
+
+
+
+//GENERATOR.SV
+
+
+
+class generator;
+  transaction trans;
+  mailbox gen2driv;
+  int no_gen;      
+  event ended;  
+
+  function new(mailbox  gen2driv);
+    this.gen2driv = gen2driv;
+  endfunction
+
+  task main;
+    repeat(5) begin
+      trans = new();
+   	  trans.wr_en = 1;
+      trans.rd_en = 0;
+      trans.data_in = $urandom();
+      trans.display("GENERATOR");
+      gen2driv.put(trans);
+    end
+    repeat(no_gen) begin
+      trans = new();
+      if(!trans.randomize()) $fatal(1, "Randomization failed!");
+      trans.display("GENERATOR");
+      gen2driv.put(trans); 
+    end
+    -> ended;
+  endtask
+endclass
+
+
+
+
+//DRIVER.SV
+
+
+
+
+
+class driver;
+  virtual fifo_fif vif;  
+  mailbox gen2driv; 
+  int no_transaction;       
+  
+  function new(virtual fifo_fif vif, mailbox gen2driv);
+    this.vif = vif;
+    this.gen2driv = gen2driv;
+  endfunction
+
+  task reset;
+    wait(vif.w_rst);
+    $display("[DRV] RESET STARTED");
+    vif.wr_en   <= 0;
+    vif.rd_en   <= 0;
+    vif.data_in <= 0;
+    wait(!vif.w_rst);
+    $display("[DRV] RESET ENDED");
+  endtask
+
+  task main; 
+    forever begin
+      transaction trans;
+      gen2driv.get(trans);
+
+      if(trans.wr_en && !vif.full) begin
+        @(posedge vif.w_clk);
+        vif.wr_en   <= 1;
+        vif.data_in <= trans.data_in;
+        @(posedge vif.w_clk);
+        vif.wr_en   <= 0;
+        vif.data_in <= 0;
+        no_transaction++;                 
+        trans.display("DRIVER-WRITE");
+      end
+
+      else if(trans.rd_en && !vif.empty) begin
+        @(posedge vif.r_clk);
+        vif.rd_en <= 1;
+        @(posedge vif.r_clk);
+        #1;
+        trans.data_out = vif.data_out;
+        vif.rd_en <= 0;
+        no_transaction++;                 
+        trans.display("DRIVER-READ");        
+      end
+      else begin
+        no_transaction++;
+      end
+    end
+  endtask
+endclass
+
+
+
+
+//MONITOR.SV
+
+
+
+class monitor;
+  virtual fifo_fif vif;
+  mailbox mon2scb;
+
+  function new(virtual fifo_fif vif, mailbox mon2scb);
+    this.vif = vif;
+    this.mon2scb = mon2scb;
+  endfunction
+  
+  task main;
+  fork
+    forever begin
+      @(posedge vif.w_clk); #1;
+      if (vif.wr_en && !vif.full) begin
+        transaction trans;
+        trans = new();
+        trans.wr_en   = 1;
+        trans.rd_en   = 0;
+        trans.data_in = vif.data_in;
+        trans.full    = vif.full;    
+        trans.empty   = vif.empty;   
+        trans.sample_coverage();           
+        mon2scb.put(trans);
+        trans.display("MONITOR-WRITE");
+
+      end
+    end
+    forever begin
+      @(posedge vif.r_clk);
+      #1;
+      if (vif.rd_en && !vif.empty) begin
+          transaction trans;        
+          trans = new();
+          trans.rd_en    = 1;
+          trans.wr_en    = 0;
+          trans.data_out = vif.data_out; 
+          trans.full     = vif.full;   
+          trans.empty    = vif.empty;  
+          trans.sample_coverage();        
+          mon2scb.put(trans);
+          trans.display("MONITOR-READ");
+        @(posedge vif.r_clk);
+      end
+    end
+  join_none
+endtask
+  
+endclass
+
+
+
+//SCOREBOARD.SV
+
+
+class scoreboard;
+  
+  bit [15:0] fifo_queue[$];//queue memory 
+  int no_transaction ;
+  int pass_count;  
+  int fail_count;   
+  mailbox mon2scb;
+
+  function new(mailbox mon2scb);
+    this.mon2scb = mon2scb;
+    pass_count=0;
+    fail_count=0;
+  endfunction
+  
+
+
+  task main;
+
+    forever begin
+      transaction trans;
+      mon2scb.get(trans);
+      no_transaction++;
+      
+      if (trans == null) begin
+        $error("[SCB] Null transaction");
+        continue;
+      end
+//write
+      if (trans.wr_en && !trans.rd_en) begin
+        fifo_queue.push_back(trans.data_in);
+        $display("[SCB] Pushed:%h QueueSize:%0d",
+                  trans.data_in, fifo_queue.size());        
+      end
+//read
+      else if (trans.rd_en && !trans.wr_en) begin
+        if (fifo_queue.size() == 0) begin
+          $error("[SCB] Underflow!");
+          fail_count++;
+        end else begin
+          bit [15:0] expected_data;
+          expected_data = fifo_queue.pop_front();
+
+          if (trans.data_out !== expected_data) begin
+            $error("[SCB] FAIL Read:%h Expected:%h",
+                    trans.data_out, expected_data);
+            fail_count++;
+        end else begin
+            $display("[SCB] PASS Read:%h", trans.data_out);
+            pass_count++;
+          end
+          trans.display("SCOREBOARD");  
+        end
+      end
+    end
+  endtask
+  
+  function void report();
+    $display("=========================================");
+    $display("         SCOREBOARD FINAL REPORT         ");
+    $display("=========================================");
+    $display("Total Transactions : %0d", no_transaction);
+    $display("PASS Count         : %0d", pass_count);
+    $display("FAIL Count         : %0d", fail_count);
+    $display("=========================================");
+  endfunction
+  
+endclass
+
+
+
+//ENVIRONMENT.SV
+
+
+
+class environment;
+  generator gen;
+  driver driv;
+  monitor mon;
+  scoreboard scb;
+
+  mailbox  gen2driv; 
+  mailbox  mon2scb;
+  
+  virtual fifo_fif vif;
+
+  function new(virtual fifo_fif vif);
+    this.vif = vif;
+    gen2driv = new();
+    mon2scb = new();
+    
+    gen = new(gen2driv);
+    driv = new(vif, gen2driv);
+    mon = new(vif, mon2scb);
+    scb = new(mon2scb);
+  endfunction
+  
+  task pre_test();
+    driv.reset();
+  endtask
+  
+  task test();
+    fork
+      gen.main();
+      driv.main();
+      mon.main();
+      scb.main();
+    join_none
+  endtask
+  
+  task post_test();
+    wait(gen.ended.triggered); 
+    wait(gen.no_gen == driv.no_transaction);
+//     wait(vif.empty ==1 );
+    #800;
+  endtask
+
+  task run();
+    pre_test();
+    test();
+    post_test();
+    scb.report();
+    $finish;
+  endtask
+endclass
+
+
+
+
+
+//TEST.SV
+
+
+class test;
+  environment env;
+  virtual fifo_fif vif;
+
+  function new(virtual fifo_fif vif);
+    this.vif = vif;
+    env = new(vif);
+  endfunction
+
+  task run();
+    $display("[TEST] Starting formal test sequence...");
+    env.gen.no_gen = 50;
+    env.run();
+    $display("[TEST] Sequence Complete.");
+  endtask
+endclass
+
+
+
+//TOP_TEST_BENCH.SV
+
+
+
+
+
+`include "interface.sv"
+`include "transaction.sv" 
+`include "generator.sv"
+`include "driver.sv"
+`include "monitor.sv"
+`include "scoreboard.sv"
+`include "environment.sv" 
+`include "test.sv"        
+
+module tb_top;
+bit w_clk, r_clk, w_rst, r_rst;//the reset are done from here
+
+initial w_clk = 0; always #5  w_clk = ~w_clk;
+initial r_clk = 0; always #7 r_clk = ~r_clk;
+
+fifo_fif tif(w_clk, r_clk, w_rst, r_rst);
+
+top dut (
+  .w_clk (tif.w_clk),
+  .w_rst (tif.w_rst),
+  .w_en  (tif.wr_en),
+  .d_in  (tif.data_in),
+  .full  (tif.full),
+  .r_clk (tif.r_clk),
+  .r_rst (tif.r_rst),
+  .r_en  (tif.rd_en),
+  .d_out (tif.data_out),
+  .empty (tif.empty)
+);
+
+test t1;
+
+initial begin
+  $dumpfile("dump.vcd");
+  $dumpvars(0, tb_top);
+  
+  w_rst = 1;  
+  r_rst = 1;
+  #10;
+  w_rst = 0;
+  r_rst = 0;
+  
+  t1 = new(tif);
+  t1.run();
+  #300;
+  $finish;
+end
+
+endmodule
+
+
+
+
+
+
+
+
+
+
+
